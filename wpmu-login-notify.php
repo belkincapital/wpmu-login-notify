@@ -30,8 +30,7 @@ function send_email_on_login($username) {
         $admin_email = get_option('admin_email');
         //$headers = "From: Admin <$admin_email>"; 
     }
-    
-    /* The unique token can be inserted in the message with %s */
+
     $message = "Your account was recently logged into from a device. Was this you?
 
 Site URL:
