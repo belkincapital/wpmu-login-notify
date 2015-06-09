@@ -1,8 +1,9 @@
 <?php
 /**
  * Plugin Name: WPMU Login Notification
- * Description: Send an email to the site admin when someone successfully logs into their sites wp-admin. Edit line 23 before using.
+ * Description: Send an email to the site admin when someone successfully logs into their sites wp-admin. Optional, Edit line 23 to specify a sender email.
  * Author: Jason Jersey
+ * Version: 1.0
  */
 
 
@@ -20,8 +21,8 @@ function send_email_on_login($username) {
     $subject = "Login Alert for $name";
     $user = get_user_by( 'login', $username );
     $to   = $user->user_email;
-    $headers = "From: Admin <no-reply@mychildsvillage.com>";
-
+    //$headers = "From: Admin <no-reply@mychildsvillage.com>";
+    
     /* The unique token can be inserted in the message with %s */
     $message = "Your account was recently logged into from a device. Was this you?
 
