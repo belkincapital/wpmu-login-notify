@@ -3,7 +3,7 @@
  * Plugin Name: WPMU Login Notification
  * Description: Send an email to the site admin when someone successfully logs into their sites wp-admin. Optional, uncomment line 31 to use site email as sender email on non WPMU sites, otherwise the default WP email is used (ie: wordpress@mysite.com). On multisite, the Network Admin email is used as the sender email. You can change it via wp-admin/network/settings.php.
  * Author: Jason Jersey
- * Version: 1.0
+ * Version: 1.0.1
  */
 
 
@@ -31,26 +31,15 @@ function send_email_on_login($username) {
         //$headers = "From: Admin <$admin_email>"; 
     }
 
-    $message = "Your account was recently logged into from a device. Was this you?
-
-Site URL:
-$url
-
-Date/Time:
-$date (Eastern)
-
-Username:
-$username
-
-IP Address:
-$ip
-
-User Agent:
-$ua
-
-If this was not you, please login to your account now and change your user password.
-$url/wp-admin/profile.php
-";
+    $one = "Your account was recently logged into from a device. Was this you? \n\n";
+    $two = "Site URL:\n $url \n\n";
+    $three = "Date/Time:\n $date (Eastern) \n\n";
+    $four = "Username:\n $username \n\n";
+    $five = "IP Address:\n $ip \n\n";
+    $six = "User Agent:\n $ua \n\n";
+    $seven = "If this was not you, please login to your account now and change your user password.\n";
+    $eight = "$url/wp-admin/profile.php";
+    $message = "$one $two $three $four $five $six $seven $eight";
 
     wp_mail($to, $subject, $message, $headers);
 
