@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WPMU Login Notification
- * Description: Send an email to the user when someone successfully logs into their account. Optional, uncomment line 31 to use site email as sender email on non WPMU sites, otherwise the default WP email is used (ie: wordpress@mysite.com). On multisite, the Network Admin email is used as the sender email. You can change it via wp-admin/network/settings.php.
+ * Description: Send an email to the user when someone successfully logs into their account. Optional, uncomment line 30 to use site email as sender email on non WPMU sites, otherwise the default WP email is used (ie: wordpress@mysite.com). On multisite, the Network Admin email is used as the sender email. You can change it via wp-admin/network/settings.php.
  * Author: Jason Jersey
  * Version: 1.0.2
  */
